@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Marvel{% endblock %}
+
+{% block body %}
+    <section class="container">
+        <div class="row">
+        {% for hero in heroes %}
+            <div class="card-jd col-lg-4 col-md-6 col-xs-12">
+                <a href="#" class="text-danger">
+                    <img src="/img/{{ hero.picture }}" class="img-responsive" alt="">
+                    <h2>{{ hero.identity }}</h2>
+                    <p>{{ hero.team }}</p>
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+    </section>
+{% endblock %}
