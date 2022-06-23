@@ -3,17 +3,18 @@
 {% block title %}Marvel{% endblock %}
 
 {% block body %}
-    <section class="container">
-        <div class="row">
-        {% for hero in heroes %}
-            <div class="card-jd col-lg-4 col-md-6 col-xs-12">
-                <a href="#" class="text-danger">
-                    <img src="/img/{{ hero.picture }}" class="img-responsive" alt="">
-                    <h2>{{ hero.identity }}</h2>
-                    <p>{{ hero.team }}</p>
-                </a>
-            </div>
+    {% for team in teams %}
+        <h2 class="team-title">{{ team.name }}</h2>
+        <section class="team-section">
+        {% for hero in team.getHeroes.getValues %}
+            <a href="#" class="link-to-hero">
+                <div class="hero-card" style="background-image: url('img/{{ hero.picture }}')">
+                    <div class="hero-identity-bg">
+                        <h3 class="hero-identity">{{ hero.identity }}</h3>
+                    </div>
+                </div>
+            </a>
         {% endfor %}
-        </div>
-    </section>
+        </section>
+    {% endfor %}
 {% endblock %}
