@@ -1,0 +1,54 @@
+section.profil-hero-bandeau {
+    background-color: red;
+    padding: 20px;
+    h2.profil-hero-identity-name {
+        color: white;
+    }
+}
+
+section.profil-section {
+    margin: 20px 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    div.profil-hero-picture {
+        display: flex;
+        justify-content: center;
+        img {
+            max-width: 80%;
+            margin: auto;
+        }
+    }
+    div.profil-hero-text {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        div.profil-hero-description {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+@media screen and (min-width: 866px) {
+    section.profil-section {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
+        justify-content: center;
+        div.profil-hero-picture {
+            width: 100%;
+            grid-column: span 4;
+        }
+        div.profil-hero-text {
+            grid-column: span 8;
+        }
+    }
+}

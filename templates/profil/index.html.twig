@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ hero.identity }}{% endblock %}
+
+{% block body %}
+    <section class="profil-hero-bandeau">
+        <h2 class="profil-hero-identity-name">{{ hero.identity }}</h2>
+    </section>
+    <section class="profil-section">
+        <div class="profil-hero-picture">
+            <img src="/img/{{ hero.picture }}" alt="{{ hero.identity }}">
+        </div>
+        <div class="profil-hero-text">
+            <div class="profil-hero-identity">
+                <h6 class="hero-first-name">
+                    <span class="bold-text">First name : </span>{{ hero.firstname }}
+                </h6>
+                <h6 class="hero-last-name">
+                    <span class="bold-text">Last name : </span>{{ hero.lastname }}
+                </h6>
+                <h6 class="hero-team">
+                    <span class="bold-text">Team : </span>{{ hero.getTeam.name }}
+                </h6>
+                <h6 class="hero-origin">
+                    <span class="bold-text">Origin : </span>{{ hero.origin }}
+                </h6>
+                <h6 class="hero-power">
+                    <span class="bold-text">Powers : </span>
+                    {% for power in  hero.getPower.getValues %}
+                        {{ power.power }},
+                    {% endfor %}
+                </h6>
+            </div>
+            <div class="profil-hero-description">
+                <h4 class="profil-hero-description-title bold-text">Description :</h4>
+                <p class="profil-hero-description-text">
+                    {{ hero.description }}
+                </p>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

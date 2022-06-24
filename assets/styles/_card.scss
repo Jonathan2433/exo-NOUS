@@ -7,14 +7,15 @@ h2.team-title {
 }
 
 section.team-section {
-    display: flex;
-    flex-direction: column;
-    row-gap: 50px;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-items: center;
+    gap: 20px;
+    padding: 20px;
     a.link-to-hero {
         text-decoration: none;
         color: white;
+        grid-column: span 12;
         div.hero-card {
             text-align: center;
             width: 250px;
@@ -40,13 +41,11 @@ section.team-section {
     }
 }
 
-@media screen and (min-width: 516px) and (max-width: 865px) {
+@media screen and (min-width: 616px) and (max-width: 865px) {
     section.team-section {
-        flex-direction: row;
-        flex-wrap: wrap;
-        row-gap: 50px;
-        column-gap: 50px;
+        gap: 50px;
         a.link-to-hero {
+            grid-column: span 6;
             div.hero-card {
                 flex: 1 0 50%;
             }
@@ -56,11 +55,9 @@ section.team-section {
 
 @media screen and (min-width: 866px) {
     section.team-section {
-        flex-direction: row;
-        flex-wrap: wrap;
-        row-gap: 50px;
-        column-gap: 50px;
+        gap: 50px;
         a.link-to-hero {
+            grid-column: span 4;
             div.hero-card {
                 flex: 1 0 33%;
             }
